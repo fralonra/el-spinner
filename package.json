@@ -1,0 +1,30 @@
+{
+  "name": "el-spinner",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard src",
+    "build": "rollup -c rollup.js",
+    "watch": "watchify src/index.js",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fralonra/el-spinner.git"
+  },
+  "keywords": [],
+  "author": "zoron (https://github.com/fralonra/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fralonra/el-spinner/issues"
+  },
+  "homepage": "https://github.com/fralonra/el-spinner#readme",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "rollup": "^0.67.0",
+    "rollup-plugin-filesize": "^5.0.1",
+    "rollup-plugin-terser": "^3.0.0",
+    "standard": "^12.0.1"
+  }
+}
