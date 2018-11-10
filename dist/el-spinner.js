@@ -920,7 +920,6 @@
 	class Spinner {
 	  constructor (opt) {
 	    this.option = {
-	      color: '#333',
 	      type: 'dots',
 	    };
 	    this.index = 0;
@@ -928,26 +927,25 @@
 	    this.el = null;
 	    this.spinner - null;
 	    this.set(opt);
-	    if (this.option.interval && typeof this.option.interval === 'number') {
-	      this.spinner.interval = this.option.interval;
-	    }
 	  }
 
 	  start () {
 	    this.index = 0;
 	    this.resume();
 	  }
-
-	  resume () {
-	    this.timer = setInterval(() => {
-	      this.index = (this.index + 1) % this.spinner.frames.length;
-	      this.el.innerText = this.spinner.frames[this.index];
-	    }, this.spinner.interval);
-	  }
-
+	  
 	  stop () {
 	    clearInterval(this.timer);
 	    this.timer = null;
+	  }
+
+	  resume () {
+	    const setFrame = () => {
+	      this.index = (this.index + 1) % this.spinner.frames.length;
+	      this.el.innerText = this.spinner.frames[this.index];
+	    };
+	    setFrame();
+	    this.timer = setInterval(setFrame, this.spinner.interval);
 	  }
 
 	  toggle () {
@@ -959,6 +957,7 @@
 	  }
 
 	  remove () {
+	    this.index = 0;
 	    this.stop();
 	    this.el.innerText = '';
 	  }
@@ -975,6 +974,9 @@
 	    this.spinner = spinners[this.option.type];
 	    if (!this.spinner) {
 	      throw new Error('Invalid spinner type!')
+	    }
+	    if (this.option.interval && typeof this.option.interval === 'number') {
+	      this.spinner.interval = this.option.interval;
 	    }
 	  }
 	}

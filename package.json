@@ -1,19 +1,23 @@
 {
   "name": "el-spinner",
   "version": "0.0.1",
-  "description": "",
+  "description": "Quickly make a text spinner for your HTML. Using cli-spinners.",
   "main": "index.js",
   "scripts": {
     "lint": "standard src",
     "build": "rollup -c rollup.js",
-    "watch": "watchify src/index.js",
     "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fralonra/el-spinner.git"
   },
-  "keywords": [],
+  "keywords": [
+    "spinner",
+    "cli-spinners",
+    "loading",
+    "progress"
+  ],
   "author": "zoron (https://github.com/fralonra/)",
   "license": "MIT",
   "bugs": {
