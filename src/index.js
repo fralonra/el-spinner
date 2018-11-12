@@ -8,7 +8,7 @@ export default class Spinner {
     this.index = 0
     this.timer = null
     this.el = null
-    this.spinner - null
+    this.spinner = null
     this.set(opt)
   }
 
