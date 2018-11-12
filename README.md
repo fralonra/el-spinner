@@ -21,6 +21,7 @@ Include the `javascript` file in your **HTML** and make a new `ElSpinner`:
     /* options */
     el: document.getElementById('el')
   })
+  spinner.start() // You should manually start the spinner
 </script>
 ```
 
