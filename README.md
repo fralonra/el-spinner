@@ -5,6 +5,8 @@
 
 Quickly make a text spinner for your HTML. Using [cli-spinners](https://github.com/sindresorhus/cli-spinners).
 
+[demo](https://fralonra.github.io/el-spinner/demo/)
+
 ## Install
 
 ```bash
