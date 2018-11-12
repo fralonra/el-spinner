@@ -926,6 +926,7 @@
 	    this.timer = null;
 	    this.el = null;
 	    this.spinner = null;
+	    this.isRunning = false;
 	    this.set(opt);
 	  }
 
@@ -935,19 +936,23 @@
 	  }
 	  
 	  stop () {
-	    clearInterval(this.timer);
+	    this.isRunning = false;
 	    this.timer = null;
 	  }
-
+	  
 	  resume () {
+	    this.isRunning = true;
 	    const setFrame = () => {
-	      this.index = (this.index + 1) % this.spinner.frames.length;
-	      this.el.innerText = this.spinner.frames[this.index];
+	      if (this.isRunning === true) {
+	        this.index = (this.index + 1) % this.spinner.frames.length;
+	        this.el.innerText = this.spinner.frames[this.index];
+	        this.timer = setTimeout(setFrame, this.spinner.interval);
+	      }
 	    };
 	    setFrame();
-	    this.timer = setInterval(setFrame, this.spinner.interval);
+	    this.timer = setTimeout(setFrame, this.spinner.interval);
 	  }
-
+	  
 	  toggle () {
 	    if (this.timer) {
 	      this.stop();
@@ -955,7 +960,7 @@
 	      this.resume();
 	    }
 	  }
-
+	  
 	  remove () {
 	    this.index = 0;
 	    this.stop();
@@ -977,6 +982,9 @@
 	    }
 	    if (this.option.interval && typeof this.option.interval === 'number') {
 	      this.spinner.interval = this.option.interval;
+	      if (this.timer) {
+	        this.resume();
+	      }
 	    }
 	  }
 	}

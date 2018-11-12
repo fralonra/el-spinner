@@ -16,6 +16,7 @@ npm install --save el-spinner
 Include the `javascript` file in your **HTML** and make a new `ElSpinner`:
 ```html
 <script src="/path/to/el-spinner.min.js"></script>
+<span id="el"></span>
 <script>
   const spinner = new ElSpinner({
     /* options */
