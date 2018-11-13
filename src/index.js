@@ -5,11 +5,10 @@ export default class Spinner {
     this.option = {
       type: 'dots',
     }
-    this.index = 0
-    this.timer = null
     this.el = null
+    this.index = 0
     this.spinner = null
-    this.isRunning = false
+    this.timer = null
     this.set(opt)
   }
 
@@ -19,21 +18,17 @@ export default class Spinner {
   }
   
   stop () {
-    this.isRunning = false
+    clearInterval(this.timer)
     this.timer = null
   }
   
   resume () {
-    this.isRunning = true
     const setFrame = () => {
-      if (this.isRunning === true) {
-        this.index = (this.index + 1) % this.spinner.frames.length
-        this.el.innerText = this.spinner.frames[this.index]
-        this.timer = setTimeout(setFrame, this.spinner.interval)
-      }
+      this.index = (this.index + 1) % this.spinner.frames.length
+      this.el.innerText = this.spinner.frames[this.index]
     }
     setFrame()
-    this.timer = setTimeout(setFrame, this.spinner.interval)
+    this.timer = setInterval(setFrame, this.spinner.interval)
   }
   
   toggle () {
@@ -63,9 +58,12 @@ export default class Spinner {
     if (!this.spinner) {
       throw new Error('Invalid spinner type!')
     }
-    if (this.option.interval && typeof this.option.interval === 'number') {
+    if (opt.interval
+      && typeof opt.interval === 'number'
+      && opt.interval !== this.spinner.interval) {
       this.spinner.interval = this.option.interval
       if (this.timer) {
+        this.stop()
         this.resume()
       }
     }
