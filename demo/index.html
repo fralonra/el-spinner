@@ -120,6 +120,7 @@
       option.innerText = t
       selectorType.appendChild(option)
     })
+    inputInterval.value = spinners.dots.interval
 
     const spinner = new ElSpinner({
       el: document.getElementById('spinner')
@@ -137,7 +138,7 @@
       }
     })
     buttonResetInterval.addEventListener('click', () => {
-      console.log(spinners[selectorType.value])
+      inputInterval.value = spinners.dots.interval
       spinner.set({
         interval: spinners[selectorType.value].interval
       })
