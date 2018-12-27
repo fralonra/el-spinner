@@ -7,7 +7,7 @@
     "lint": "standard src",
     "build": "rollup -c rollup.js",
     "start:demo": "npx serve",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
