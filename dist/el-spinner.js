@@ -917,6 +917,8 @@
 		}
 	};
 
+	let elTmpText;
+
 	class Spinner {
 	  constructor (opt) {
 	    this.option = {
@@ -942,6 +944,9 @@
 	  resume () {
 	    const setFrame = () => {
 	      this.index = (this.index + 1) % this.spinner.frames.length;
+	      if (!this.timer) {
+	        elTmpText = this.el.innerText;
+	      }
 	      this.el.innerText = this.spinner.frames[this.index];
 	    };
 	    setFrame();
@@ -959,7 +964,7 @@
 	  remove () {
 	    this.index = 0;
 	    this.stop();
-	    this.el.innerText = '';
+	    this.el.innerText = elTmpText || '';
 	  }
 
 	  set (opt) {

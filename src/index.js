@@ -27,7 +27,9 @@ export default class Spinner {
   resume () {
     const setFrame = () => {
       this.index = (this.index + 1) % this.spinner.frames.length
-      elTmpText = this.el.innerText
+      if (!this.timer) {
+        elTmpText = this.el.innerText
+      }
       this.el.innerText = this.spinner.frames[this.index]
     }
     setFrame()
