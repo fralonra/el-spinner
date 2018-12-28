@@ -30,7 +30,7 @@ Include the `javascript` file in your **HTML** and make a new `ElSpinner`:
 
 You can also use it like this:
 ```javascript
-import { ElSpinner } from 'el-spinner'
+import ElSpinner from 'el-spinner'
 
 let spinner = new ElSpinner({
   el: document.getElementById('el')
