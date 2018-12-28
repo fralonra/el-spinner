@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "standard src",
-    "build": "rollup -c rollup.js",
+    "build": "rollup -c rollup.config.js",
     "start:demo": "npx serve",
     "prepare": "npm run build"
   },
