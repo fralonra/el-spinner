@@ -1,5 +1,7 @@
 import spinners from './spinners'
 
+let elTmpText
+
 export default class Spinner {
   constructor (opt) {
     this.option = {
@@ -25,6 +27,7 @@ export default class Spinner {
   resume () {
     const setFrame = () => {
       this.index = (this.index + 1) % this.spinner.frames.length
+      elTmpText = this.el.innerText
       this.el.innerText = this.spinner.frames[this.index]
     }
     setFrame()
@@ -42,7 +45,7 @@ export default class Spinner {
   remove () {
     this.index = 0
     this.stop()
-    this.el.innerText = ''
+    this.el.innerText = elTmpText || ''
   }
 
   set (opt) {
