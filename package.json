@@ -1,10 +1,10 @@
 {
   "name": "el-spinner",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Quickly make a text spinner for your HTML. Using cli-spinners.",
   "main": "src/index.js",
   "scripts": {
-    "lint": "standard src",
+    "lint": "standard --fix src/*.js | snazzy",
     "build": "rollup -c rollup.config.js",
     "start:demo": "npx serve",
     "prepare": "npm run build"
@@ -29,6 +29,7 @@
     "rollup": "^1.0.0",
     "rollup-plugin-filesize": "^5.0.1",
     "rollup-plugin-terser": "^3.0.0",
+    "snazzy": "^8.0.0",
     "standard": "^12.0.1"
   }
 }

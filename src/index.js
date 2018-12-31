@@ -5,7 +5,7 @@ let elTmpText
 export default class Spinner {
   constructor (opt) {
     this.option = {
-      type: 'dots',
+      type: 'dots'
     }
     this.el = null
     this.index = 0
@@ -18,12 +18,12 @@ export default class Spinner {
     this.index = 0
     this.resume()
   }
-  
+
   stop () {
     clearInterval(this.timer)
     this.timer = null
   }
-  
+
   resume () {
     const setFrame = () => {
       this.index = (this.index + 1) % this.spinner.frames.length
@@ -35,7 +35,7 @@ export default class Spinner {
     setFrame()
     this.timer = setInterval(setFrame, this.spinner.interval)
   }
-  
+
   toggle () {
     if (this.timer) {
       this.stop()
@@ -43,7 +43,7 @@ export default class Spinner {
       this.resume()
     }
   }
-  
+
   remove () {
     this.index = 0
     this.stop()
@@ -63,9 +63,9 @@ export default class Spinner {
     if (!this.spinner) {
       throw new Error('Invalid spinner type!')
     }
-    if (opt.interval
-      && typeof opt.interval === 'number'
-      && opt.interval !== this.spinner.interval) {
+    if (opt.interval &&
+      typeof opt.interval === 'number' &&
+      opt.interval !== this.spinner.interval) {
       this.spinner.interval = this.option.interval
       if (this.timer) {
         this.stop()
