@@ -10,14 +10,34 @@ declare class ElSpinner {
   constructor(options: ElSpinnerOptions)
 
   /**
-   * Generate the maze
+   * Stop the spinner and then remove the text from the element. 
    * */
-  generate(): void
+  remove(): void
 
   /**
-   * Get maze data
+   * Resume the spinner.
    * */
-  get(): Maz
+  resume(): void
+
+  /**
+   * Pass a new option to the spinner.
+   * */
+  set(options: ElSpinnerOptions): void
+
+  /**
+   * Start the spinner from the first frame.
+   * */
+  start(): void
+
+  /**
+   * Stop the spinner.
+   * */
+  stop(): void
+
+  /**
+   * Toggle the spinner state between `stop` and `resume`.
+   * */
+  toggle(): void
 }
 
 export = ElSpinner

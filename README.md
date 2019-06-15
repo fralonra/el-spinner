@@ -62,7 +62,7 @@ Toggle the spinner state between `stop` and `resume`.
 
 #### remove()
 
-Stop the spinner and then remove the text from the element. 
+Stop the spinner and then remove the text from the element.
 
 #### set(options)
 
