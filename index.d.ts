@@ -1,9 +1,21 @@
 export as namespace ElSpinner
 
 interface ElSpinnerOptions {
-  el?: Element
-  type?: string
+  /**
+   * The element where to display the spinner.
+   */
+  el: Element
+
+  /**
+   * Interval between each frame. If not set, the value from the original spinner will be used.
+   */
   interval?: number
+
+  /**
+   * The type of the spinner.
+   * @default 'dots'
+   */
+  type?: string
 }
 
 declare class ElSpinner {
