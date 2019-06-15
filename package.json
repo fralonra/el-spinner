@@ -1,6 +1,6 @@
 {
   "name": "el-spinner",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Quickly make a text spinner for your HTML. Using cli-spinners.",
   "main": "src/index.js",
   "scripts": {
