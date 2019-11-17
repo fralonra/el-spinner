@@ -1,13 +1,14 @@
 {
   "name": "el-spinner",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Quickly make a text spinner for your HTML. Using cli-spinners.",
   "main": "src/index.js",
   "scripts": {
     "lint": "standard --fix src/*.js | snazzy",
     "build": "rollup -c rollup.config.js",
     "start:demo": "npx serve",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
