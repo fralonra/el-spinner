@@ -1,6 +1,6 @@
 # el-spinner
 
-[![Build Status](https://travis-ci.org/fralonra/el-spinner.svg?branch=master)](https://travis-ci.org/fralonra/el-spinner)
+[![Build Status](https://travis-ci.com/fralonra/el-spinner.svg?branch=master)](https://travis-ci.com/fralonra/el-spinner)
 [![npm version](https://img.shields.io/npm/v/el-spinner.svg)](https://www.npmjs.com/package/el-spinner) [![Greenkeeper badge](https://badges.greenkeeper.io/fralonra/el-spinner.svg)](https://greenkeeper.io/)
 
 Quickly make a text spinner for your HTML. Using [cli-spinners](https://github.com/sindresorhus/cli-spinners).
