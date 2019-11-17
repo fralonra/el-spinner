@@ -1,6 +1,6 @@
 {
   "name": "el-spinner",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Quickly make a text spinner for your HTML. Using cli-spinners.",
   "main": "src/index.js",
   "scripts": {
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/fralonra/el-spinner#readme",
   "devDependencies": {
+    "pre-commit": "^1.2.2",
     "rollup": "^1.0.0",
     "rollup-plugin-filesize": "^6.0.0",
     "rollup-plugin-terser": "^5.0.0",
